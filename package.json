@@ -1,0 +1,41 @@
+{
+  "name": "cachai",
+  "description": "LRU Cache for Node.js",
+  "version": "2.0.0",
+  "author": "Zachary Rice <zachtrice@gmail.com>",
+  "homepage": "https://github.com/ZachTRice/jscache",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ZachTRice/jscache.git"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "main": "./lib/index.js",
+  "devDependencies": {
+    "blanket": "git://github.com/alex-seville/blanket.git",
+    "chai": "*",
+    "coffee-script": "*",
+    "coveralls": "^2.11.2",
+    "mocha": "*",
+    "mocha-lcov-reporter": "0.0.2",
+    "mocha-text-cov": "^0.1.0",
+    "sinon": "*",
+    "sinon-chai": "*"
+  },
+  "scripts": {
+    "test": "mocha -R spec",
+    "test-cov": "mocha -r blanket -R html-cov > coverage.html",
+    "test-cov-text": "mocha -r blanket -R mocha-text-cov",
+    "test-coveralls": "mocha -r blanket -R mocha-lcov-reporter | coveralls || true"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "lib",
+      "data-cover-never": "node_modules"
+    }
+  }
+}
